@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+{% load static %}
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;        
+    }
+
+    .header {
+        background-color: #0A121E;
+        height: 90px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .body1 {
+        background-color: #FAFAFA;
+        height: 915px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;     
+    }
+
+    .body2 {
+        background-color: #3C3C3C;
+        height: 892px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .content {
+        width: 1440px;
+        padding: 0 150px;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .link {
+        color: #FFFFFF;
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 0px 18px;
+        text-decoration: none;
+    }
+    
+    .header-links {
+        align-items: center;
+        display: flex;  
+        justify-content: center;
+        text-align: center; 
+        flex-grow: 1;
+        width: 872px;
+        height: 20px; 
+    }
+
+    .custom-button-container {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex-grow: 1; 
+    }
+
+    .custom-button {
+        background-color: #FF342B !important;
+        color: #FFFFFF !important;
+        width: 88px;
+        height: 44px;
+        border: none;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 19.5px;
+    }
+
+    .logo-container {
+        width: 120px;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .center-body-text-block h1 {
+        width: 745px;
+        height: 68px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 56px;
+        line-height: 68.26px;
+        color: #0A121E;
+        margin: 0 auto;
+    }
+
+    .center-body-text-block p {
+        width: 751px;
+        height: 90px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: #3C3C3C;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .center-text {
+        width: 1450px;
+        height: 880px;
+        justify-content: center;
+        margin: 0 auto;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .info-container-main {
+        display: flex;
+        justify-content: space-between;
+        width: 1140px;
+        height: 457px;
+        align-items: center;
+        padding: 300px 0px;
+    }
+
+    .info-container-small-blocks {
+        display: flex;
+        justify-content: space-between;
+        width: 556px;
+        height: 420px;
+    }
+
+    .info-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 556px;
+        height: 420px;
+        text-align: center;
+        align-items: center;
+        
+    }
+
+    .info-block {
+        width: 263px;
+        height: 200px;
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .big-info-block {
+        width: 457px;
+        height: 457px;
+        display: flex;
+    }
+
+    .icon-block {
+        width: 64px;
+        height: 64px;
+        display: flex;
+    }
+
+    .icon-block-text {
+        width: 223px;
+        height: 52px;
+        text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 26px;
+        color: #0A121E;
+        align-items: center;
+        text-align: center;
+    }
+
+    .slider_main {
+        width: 1117px;
+        height: 630px;
+        text-align: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .slider_big_image {
+        width: 750px;
+        height: 420px;
+        text-align: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .your-class-slider-for {
+        width: 750px;
+        height: 420px;
+        text-align: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .slider_menu {
+        width: 1117px;
+        height: 165px;
+        text-align: center;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+    }
+
+    .slider-nav {
+        width: 1117px;
+        height: 165px;
+        justify-content: space-between;
+    }
+
+    .slider-nav-element {
+        width: 65px;
+        height: 65px;
+    }
+
+    .image_165 {
+        max-width: 165px;
+        max-height: 165px;
+    }
+    
+    .slider-block {
+        align-items: center;
+        align-self: center;
+        width: 1117px;
+        height: 630px;
+        padding-top: 202px;
+    }
+
+    .headerh2 h2 {
+        align-self: center;
+        width: 295px;
+        height: 52px;
+        text-align: center;
+        align-items: center;
+        padding-top: 90px;
+        font-family: "Montserrat", sans-serif;
+        font-weight: 700;
+        font-size: 42px;
+        line-height: 52px;
+        color: #FFFFFF;
+        text-align: center;
+        margin: 0 auto;
+      }
+
+    .contener-b2 {
+        align-self: center;
+        text-align: center;
+        align-items: center;
+
+    } 
+
+
+</style>
+</head>
+<body>
+    {% block content %}
+    <div class="header">
+        <div class="content">
+            <div class="logo-container">
+                <img src="{% static 'Vector.png' %}"alt="Логотип">
+              </div>
+                <div class="header-links">
+                    <div class="link">
+                        <a href="#" class="link">ПРЕИМУЩЕСТВА</a>
+                    </div>
+                    <div class="link">
+                        <a href="#" class="link">ФОТОГРАФИИ</a>
+                    </div>
+                </div>
+            <div class="custom-button-container">
+                <button class="btn custom-button">
+                    ВХОД
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="body1">
+        <div class="content">
+            <div class="center-text">
+                <div class="center-body-text-block">
+                    <h1>Космическое агентство</h1>
+                        <p>Национальное управление по аэронавтике и исследованию 
+                        космического пространства — ведомство, относящееся к 
+                        федеральному правительству США и подчиняющееся непосредственно 
+                        президенту США.</p>
+                </div>
+                <div class="info-container-main">
+                            <div class="info-container-small-blocks">
+                                <div class="info-container">
+                                    <div class="info-block">
+                                      <div>
+                                          <img src="{% static 'fa6-solid_shuttle-space.png' %}"alt="fa6-solid_shuttle-space">
+                                      </div>
+                                      <div class="icon-block-text">
+                                        Спейс шаттлы —пилотируемые корабли
+                                      </div>
+                                    </div>
+                                    <div class="info-block">
+                                        <div>
+                                            <img src="{% static 'ion_telescope.png' %}"alt="ion_telescope">
+                                        </div>
+                                        <div class="icon-block-text">
+                                            Лучшее телескопическое оборудование
+                                        </div>
+                                    </div>
+                                    <div class="info-block">
+                                        <div>
+                                          <img src="{% static 'bi_moon-stars-fill.png' %}"alt="bi_moon-stars-fill">
+                                        </div>
+                                        <div class="icon-block-text">
+                                            Целимся на Луну <br> и Марс
+                                        </div>
+                                    </div>
+                                    <div class="info-block">
+                                        <div>
+                                          <img src="{% static 'bxs_medal.png' %}"alt="bxs_medal">
+                                        </div>
+                                        <div class="icon-block-text">
+                                            Золотая медаль <br> по научным исследованиям
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="big-info-block">
+                                <img src="{% static 'space.png' %}"alt="Логотип">
+                            </div>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+    <div class="body2">
+        <div class="content">
+          <div class="contener-b2">
+            <div class="headerh2"><h2>Фотографии</h2></div>
+            <div class="slider-block">
+                <div class="your-class slider-for">
+                    {% for image in images %}
+                    <div><img src="{{ MEDIA_URL }}{{ image.image }}" alt="{{ image }}"></div>
+                    {% endfor %}
+                </div>
+                <div class="slider-nav">
+                    {% for image in images %}
+                    <div class="image_165"><img src="{{ MEDIA_URL }}{{ image.image }}" alt="{{ image }}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="{% static 'slick/slick.min.js' %}"></script>
+  <script type="text/javascript">
+    $('.slider-for').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+      });
+      $('.slider-nav').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        asNavFor: '.slider-for',
+        dots: true,
+        centerMode: true,
+        focusOnSelect: true
+      });
+  </script>
+{% endblock %} 
+</body>
+</html>
